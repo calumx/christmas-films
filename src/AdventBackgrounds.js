@@ -78,6 +78,9 @@ const AdventBackgrounds = (props) => {
       );
 
       btn.innerHTML = '';
+      let img = new Image();
+      img.src = imgsInUse[0];
+      img.onload = () => console.log('loaded');
     });
   }
 };

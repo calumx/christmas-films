@@ -14,6 +14,7 @@ const Calendar = () => {
   );
 
   const daysRef = useRef(null);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     const alreadySet = daysRef.current;
@@ -30,6 +31,7 @@ const Calendar = () => {
   const btnClickHandler = (day) => {
     setDaysOpened((prevState) => [...prevState, day]);
     AdventBackgrounds(day);
+
     // localStorageHandler();  UNCOMMENT THIS WHEN DONE TESTING "OPENED" STATE
     if (day === 23 || day === 24) {
       setSpecialDay(day);
