@@ -46,14 +46,15 @@ const GetFilmFromList = (props) => {
       title: 'Black Christmas',
       pic: blkXmas,
       description:
-        'Classic sorority-house horror whose menacing phone calls and wise-cracking teens predate Scream. Very vibey, still holds up, and stars a pre-Superman Margot Kidder',
+        'Sorority-house slasher whose menacing phone calls and wise-cracking teens predate Scream. Very vibey, still holds up, and stars a pre-Superman Margot Kidder. Subdued 70s lighting and gaudy set design set the mood perfectly, and another great entry into the pantheon of horror films which came out to pearl-clutching critical panning then slowly grew from cult following to widespread acclaim.  ',
       pairings: 'Not sure yet',
     },
 
     {
       title: 'Eyes Wide Shut',
       pic: eyes,
-      description: "Kubrick's last flick.",
+      description:
+        "Surreal and contentious Kubrick thriller. Regardless of one's overall opinions on the film, it stands as a noticeable oddball on the list and, I feel, helps to offset some of the more on-the-nose inclusions. Kubrick's flair for lighting (and just about everything else) combined with Hollywood A-listers playing very rich people makes for an unsettling dreamlike haze throughout, but I think it's the real-life marital tension between Kidman and Cruise which push it over the edge and onto the list.",
       pairings:
         'A nice selection of up-market booze, maybe a decent wine or cognac.',
     },
@@ -61,7 +62,7 @@ const GetFilmFromList = (props) => {
       title: 'Miracle on 34th Street',
       pic: miracle,
       description:
-        'Smashing remake that plays the Christmas thing straighter than most',
+        'Smashing remake that plays the "Christmas thing" straighter than most, a cut from the Second Golden Age of John Hughes. An always on-form Mara Wilson shares excellent chemistry with a Richard Attenborough who seems to have walked off the set of the previous year\'s Jurassic Park and into a Santa suit, still in character.',
       pairings: 'Milk and Maryland cookies for that American wean feeling.',
     },
 
@@ -69,7 +70,7 @@ const GetFilmFromList = (props) => {
       title: "National Lampoon's Christmas Vacation",
       pic: lampoons,
       description:
-        "A good entry in a series of classics, my da's favourite and a great case for forgetting that Chevy Chase is a real-life arsehole.",
+        "A solid entry in a series of films which hold up surprisingly well (written by...oh, that explains it), my dad's favourite and a great case for forgetting that Chevy Chase is a real-life arsehole. Easy-watching comedy of errors with no surprises, except for Johnny Galecki and Juliette Lewis playing the weans in this one.",
       pairings:
         "A properly-cooked turkey, to make up for the one they didn't manage in the film.",
     },
@@ -77,7 +78,7 @@ const GetFilmFromList = (props) => {
       title: 'Scrooged',
       pic: scrooged,
       description:
-        'A hilarious take on a classic, and any collection which includes Chevy Chase has to similarly tip the cap to the anti-Chevy, Bill Murray',
+        'The winner of several Dickens adaptations which were considered. Any collection which includes Chevy Chase has to similarly tip the cap to the anti-Chevy. A bit tonally confused at times, which if anything just adds to the story, and nobody plays "Are we meant to cheer for this character or not?" quite like Bill Murray.',
       pairings: 'Not sure yet.',
     },
 
@@ -87,7 +88,7 @@ const GetFilmFromList = (props) => {
       description:
         "An old classic I haven't actually seen, but I love the song.",
       pairings:
-        'A traditional Christmas nog, with no-alcohol for a wholesome 50s feeling.',
+        'A traditional Christmas nog - with no alcohol - for a wholesome 50s feeling.',
     },
     {
       title: 'Tokyo Godfathers',
@@ -100,7 +101,7 @@ const GetFilmFromList = (props) => {
       title: 'The Nightmare Before Christmas',
       pic: nightmare,
       description:
-        'An earlier Tim Burton effort from before it was cool to be Tim Burton, and a particularly nice vibe collision for me as I used to be really scared of it as a boy',
+        'A Tim Burton effort from around the time it was still cool to be Tim Burton, and a particularly nice vibe collision for me as I used to be really scared of it as a boy.',
       pairings: 'Not sure yet',
     },
 
@@ -108,7 +109,7 @@ const GetFilmFromList = (props) => {
       title: 'Klaus',
       pic: klaus,
       description:
-        "A recommendation from Hanky with a killer cast. Haven't seen it.",
+        "A modern Netflix thing with a killer cast. Haven't seen it yet.",
       pairings: 'Not sure yet',
     },
 
@@ -116,7 +117,7 @@ const GetFilmFromList = (props) => {
       title: 'How the Grinch Stole Christmas',
       pic: grinch,
       description:
-        'A classic referenced in Home Alone 2 and remade into a very competent Jim Carrey romp (with which it competed for a place on this strict no-duplicates list',
+        'A classic referenced in Home Alone 2 and remade into a competent Jim Carrey romp (with which it competed for a place on this strict no-duplicates list). ',
       pairings:
         'A three-decker toadstool and sauerkraut sandwich ... with arsenic sauce.',
     },
@@ -141,7 +142,7 @@ const GetFilmFromList = (props) => {
       title: 'The Polar Express',
       pic: polar,
       description:
-        "Tom Hanks mo-cap modern fairytale. Posters remind me of Snowpiercer but its regular inclusion on Auntie Beeb's Christmas telly rotation suggest that tonally, they may be quite different.",
+        "Tom Hanks mo-cap modern fairytale. Somehow managed to miss out on it over the years. Posters remind me of Snowpiercer but its regular inclusion on Auntie Beeb's Christmas telly rotation suggest that tonally, they may be quite different.",
       pairings:
         'A nice warming Christmas hot choc, with lots of marshmallows & cream.',
     },
@@ -150,23 +151,25 @@ const GetFilmFromList = (props) => {
       title: 'Un Conte de Noël',
       pic: noel,
       description:
-        'A French film I saw on a list. Translates to "A Christmas Tale"',
-      pairings: 'Not sure yet.',
+        'A French drama film I saw on the BFI list of Top 10 Independent Christmas films (and a few others - seems popular!). Translates to "A Christmas Tale" and features a large multi-generational family meeting up for a Christmas dinner. I reckon it will be a bit light-hearted but not sure.',
+      pairings: 'Something French - Brie and a Kronenbourg?',
     },
 
     {
       title: 'Carol',
       pic: carol,
       description:
-        'An "alternative Christmas romance" film starring Cate Blanchett and Rooney Mara - high praise from critics. Mid-century period piece but think it will work really well.',
+        'An "alternative Christmas romance" film starring Cate Blanchett and Rooney Mara with high praise from critics. Mid-century period piece, which is not usually for me, but think it will work really well. Nominated for bags of prestigious awards and a ringing endorsement from Kermode earned it a spot on this list. Also based on a Patricia Highsmith novel, which can only be a good thing. ',
       pairings: 'Super-dry martinis, per the period',
     },
 
     {
       title: 'The Apartment',
       pic: apartment,
-      description: 'Jack Lemmon...possible Oscar winner?',
-      pairings: 'A bourbon Old-Fashioned...seems pretty old.',
+      description:
+        'An Oscar-winning Jack Lemmon/Shirley MacLaine feature, which I saw once years ago on a Billy Wilder bender. Can\'t remember a lot about it but the premise and subject matter leave a lot of room for an excellent Christmas "thinker".',
+      pairings:
+        'A bourbon Old-Fashioned...seems pretty old. And a wee bit of fruitcake.',
     },
 
     {
