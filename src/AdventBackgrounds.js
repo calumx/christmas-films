@@ -1,4 +1,4 @@
-import one from './assets/images/advent-bgs/1.jpg';
+import one from './assets/images/advent-bgs/1.jpg'; //LARGE COLLAPSED LINES OF IMPORTS
 import two from './assets/images/advent-bgs/2.jpg';
 import three from './assets/images/advent-bgs/3.jpg';
 import four from './assets/images/advent-bgs/4.jpg';
@@ -23,64 +23,94 @@ import twentytwo from './assets/images/advent-bgs/22.jpg';
 import twentythree from './assets/images/advent-bgs/23.jpg';
 import twentyfour from './assets/images/advent-bgs/24.jpg';
 
-const srcImgs = [
-  one,
-  two,
-  three,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  ten,
-  eleven,
-  twelve,
-  thirteen,
-  fourteen,
-  fifteen,
-  sixteen,
-  seventeen,
-  eighteen,
-  nineteen,
-  twenty,
-  twentyone,
-  twentytwo,
-  twentythree,
-  twentyfour,
-];
-const imgsInUse = [];
+let srcImgs =
+  localStorage.getItem('srcImgs') !== null
+    ? JSON.parse(localStorage.getItem('srcImgs'))
+    : [
+        one,
+        two,
+        three,
+        four,
+        five,
+        six,
+        seven,
+        eight,
+        nine,
+        ten,
+        eleven,
+        twelve,
+        thirteen,
+        fourteen,
+        fifteen,
+        sixteen,
+        seventeen,
+        eighteen,
+        nineteen,
+        twenty,
+        twentyone,
+        twentytwo,
+        twentythree,
+        twentyfour,
+      ]; //LARGE COLLAPSED ARRAY OF IMGS
+
+let imgsInUse =
+  localStorage.getItem('imgsInUse') !== null
+    ? JSON.parse(localStorage.getItem('imgsInUse'))
+    : [];
 
 const AdventBackgrounds = (props) => {
-  if (props === 24) {
-    return;
+  if (props === 25) {
+    return null;
   } else if (props) {
+    let btn = document.getElementById(props);
+
     let randomIndex = Math.floor(Math.random() * srcImgs.length);
-    let btn = document.getElementById(props + 1);
     imgsInUse.unshift(...srcImgs.splice(randomIndex, 1));
 
     btn.style.setProperty(
       'background',
-      'url(' + imgsInUse[0] + ') 50% 50% / cover no-repeat'
+      'rgba(0, 0, 0, 0.2) url(' + imgsInUse[0] + ') 50% 50% / cover no-repeat'
     );
+
+    btn.style.setProperty('background-blend-mode', 'multiply');
+
+    localStorage.setItem('srcImgs', JSON.stringify(srcImgs));
+    localStorage.setItem('imgsInUse', JSON.stringify(imgsInUse));
 
     return (btn.innerHTML = '');
   } else {
     const btnsOpened = [...document.getElementsByClassName('opened')];
 
     return btnsOpened.forEach((btn) => {
-      let randomIndex = Math.floor(Math.random() * srcImgs.length);
-      imgsInUse.unshift(...srcImgs.splice(randomIndex, 1));
+      if (localStorage.getItem('imgsInUse') !== null) {
+        btn.style.setProperty(
+          'background',
+          'rgba(0, 0, 0, 0.2) url(' +
+            imgsInUse[imgsInUse.length - btn.id] +
+            ') 50% 50% / cover no-repeat'
+        );
 
-      btn.style.setProperty(
-        'background',
-        'url(' + imgsInUse[0] + ') 50% 50% / cover no-repeat'
-      );
+        btn.innerHTML = '';
 
-      btn.innerHTML = '';
-      let img = new Image();
-      img.src = imgsInUse[0];
-      img.onload = () => console.log('loaded');
+        btn.style.setProperty('background-blend-mode', 'multiply');
+      } else {
+        let randomIndex = Math.floor(Math.random() * srcImgs.length);
+        imgsInUse.unshift(...srcImgs.splice(randomIndex, 1));
+
+        btn.style.setProperty(
+          'background',
+          'rgba(0, 0, 0, 0.2) url(' +
+            imgsInUse[0] +
+            ') 50% 50% / cover no-repeat'
+        );
+
+        btn.style.setProperty('background-blend-mode', 'multiply');
+
+        localStorage.setItem('srcImgs', JSON.stringify(srcImgs));
+        localStorage.setItem('imgsInUse', JSON.stringify(imgsInUse));
+
+        btn.innerHTML = '';
+      }
     });
   }
 };

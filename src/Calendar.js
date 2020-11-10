@@ -6,49 +6,51 @@ import './FilmInfo.css';
 
 const Calendar = () => {
   const [modalLoaded, setModalLoaded] = useState(false);
-  const [specialDay, setSpecialDay] = useState(0);
+  const [daySelected, setDaySelected] = useState(0);
+
   const [daysOpened, setDaysOpened] = useState(
-    localStorage.length
-      ? localStorage.getItem('daysOpened')
-      : [0, 1, 2, 3, 4, 5, 6, 7] //TEST VALUES - SHOULD BE []
+    localStorage.getItem('daysOpened') !== null
+      ? localStorage.getItem('daysOpened').split(',')
+      : []
   );
 
   const daysRef = useRef(null);
-  const modalRef = useRef(null);
 
   useEffect(() => {
     const alreadySet = daysRef.current;
 
     if (alreadySet === null) {
       daysOpened.forEach((day) => {
-        document.getElementById(day + 1).classList.add('opened');
+        document.getElementById(day).classList.add('opened');
       });
       AdventBackgrounds();
       daysRef.current = daysOpened;
-    }
+    } else localStorage.setItem('daysOpened', daysOpened);
   }, [daysOpened]);
 
   const btnClickHandler = (day) => {
-    setDaysOpened((prevState) => [...prevState, day]);
-    AdventBackgrounds(day);
-
-    // localStorageHandler();  UNCOMMENT THIS WHEN DONE TESTING "OPENED" STATE
-    if (day === 23 || day === 24) {
-      setSpecialDay(day);
+    if (!document.getElementById(day).classList.contains('opened')) {
+      if (
+        day > 1 && //this stuff will be replaced
+        !document.getElementById(day - 1).classList.contains('opened') //by Date() code in December
+      ) {
+        return alert('Too early! Try a day which comes sooner.'); //it's just here to test during November.
+      } else AdventBackgrounds(day);
+      document.getElementById(day).classList.add('opened');
+      setDaysOpened((prevState) => [...prevState, day]);
     }
+
+    setDaySelected(day);
 
     document.getElementById('overlay').classList.toggle('closed');
     document.getElementById('modal').classList.toggle('closed');
   };
 
-  // const localStorageHandler = () => {
-  //   localStorage.setItem('daysOpened', daysOpened);
-  // }; UNCOMMENT THIS WHEN DONE TESTING "OPENED" STATE
-
   const exitModalHandler = () => {
     document.getElementById('overlay').classList.toggle('closed');
     document.getElementById('modal').classList.add('fadeOut');
     setModalLoaded(false);
+    setDaySelected(0);
   };
 
   return (
@@ -67,7 +69,7 @@ const Calendar = () => {
         <FilmInfo
           modalLoaded={modalLoaded}
           exitModalHandler={() => exitModalHandler()}
-          specialDay={specialDay}
+          daySelected={daySelected}
         />
       </div>
       <ol>
@@ -75,7 +77,7 @@ const Calendar = () => {
           <button
             id="1"
             className="xmas-btn"
-            onClick={() => btnClickHandler(0)}
+            onClick={() => btnClickHandler(1)}
           >
             1
           </button>
@@ -84,7 +86,7 @@ const Calendar = () => {
           <button
             id="2"
             className="xmas-btn"
-            onClick={() => btnClickHandler(1)}
+            onClick={() => btnClickHandler(2)}
           >
             2
           </button>
@@ -93,7 +95,7 @@ const Calendar = () => {
           <button
             id="3"
             className="xmas-btn"
-            onClick={() => btnClickHandler(2)}
+            onClick={() => btnClickHandler(3)}
           >
             3
           </button>
@@ -102,7 +104,7 @@ const Calendar = () => {
           <button
             id="4"
             className="xmas-btn"
-            onClick={() => btnClickHandler(3)}
+            onClick={() => btnClickHandler(4)}
           >
             4
           </button>
@@ -111,7 +113,7 @@ const Calendar = () => {
           <button
             id="5"
             className="xmas-btn"
-            onClick={() => btnClickHandler(4)}
+            onClick={() => btnClickHandler(5)}
           >
             5
           </button>
@@ -120,7 +122,7 @@ const Calendar = () => {
           <button
             id="6"
             className="xmas-btn"
-            onClick={() => btnClickHandler(5)}
+            onClick={() => btnClickHandler(6)}
           >
             6
           </button>
@@ -129,7 +131,7 @@ const Calendar = () => {
           <button
             id="7"
             className="xmas-btn"
-            onClick={() => btnClickHandler(6)}
+            onClick={() => btnClickHandler(7)}
           >
             7
           </button>
@@ -138,7 +140,7 @@ const Calendar = () => {
           <button
             id="8"
             className="xmas-btn"
-            onClick={() => btnClickHandler(7)}
+            onClick={() => btnClickHandler(8)}
           >
             8
           </button>
@@ -147,7 +149,7 @@ const Calendar = () => {
           <button
             id="9"
             className="xmas-btn"
-            onClick={() => btnClickHandler(8)}
+            onClick={() => btnClickHandler(9)}
           >
             9
           </button>
@@ -156,7 +158,7 @@ const Calendar = () => {
           <button
             id="10"
             className="xmas-btn"
-            onClick={() => btnClickHandler(9)}
+            onClick={() => btnClickHandler(10)}
           >
             10
           </button>
@@ -165,7 +167,7 @@ const Calendar = () => {
           <button
             id="11"
             className="xmas-btn"
-            onClick={() => btnClickHandler(10)}
+            onClick={() => btnClickHandler(11)}
           >
             11
           </button>
@@ -174,7 +176,7 @@ const Calendar = () => {
           <button
             id="12"
             className="xmas-btn"
-            onClick={() => btnClickHandler(11)}
+            onClick={() => btnClickHandler(12)}
           >
             12
           </button>
@@ -183,7 +185,7 @@ const Calendar = () => {
           <button
             id="13"
             className="xmas-btn"
-            onClick={() => btnClickHandler(12)}
+            onClick={() => btnClickHandler(13)}
           >
             13
           </button>
@@ -192,7 +194,7 @@ const Calendar = () => {
           <button
             id="14"
             className="xmas-btn"
-            onClick={() => btnClickHandler(13)}
+            onClick={() => btnClickHandler(14)}
           >
             14
           </button>
@@ -201,7 +203,7 @@ const Calendar = () => {
           <button
             id="15"
             className="xmas-btn"
-            onClick={() => btnClickHandler(14)}
+            onClick={() => btnClickHandler(15)}
           >
             15
           </button>
@@ -210,7 +212,7 @@ const Calendar = () => {
           <button
             id="16"
             className="xmas-btn"
-            onClick={() => btnClickHandler(15)}
+            onClick={() => btnClickHandler(16)}
           >
             16
           </button>
@@ -219,7 +221,7 @@ const Calendar = () => {
           <button
             id="17"
             className="xmas-btn"
-            onClick={() => btnClickHandler(16)}
+            onClick={() => btnClickHandler(17)}
           >
             17
           </button>
@@ -228,7 +230,7 @@ const Calendar = () => {
           <button
             id="18"
             className="xmas-btn"
-            onClick={() => btnClickHandler(17)}
+            onClick={() => btnClickHandler(18)}
           >
             18
           </button>
@@ -237,7 +239,7 @@ const Calendar = () => {
           <button
             id="19"
             className="xmas-btn"
-            onClick={() => btnClickHandler(18)}
+            onClick={() => btnClickHandler(19)}
           >
             19
           </button>
@@ -246,7 +248,7 @@ const Calendar = () => {
           <button
             id="20"
             className="xmas-btn"
-            onClick={() => btnClickHandler(19)}
+            onClick={() => btnClickHandler(20)}
           >
             20
           </button>
@@ -255,7 +257,7 @@ const Calendar = () => {
           <button
             id="21"
             className="xmas-btn"
-            onClick={() => btnClickHandler(20)}
+            onClick={() => btnClickHandler(21)}
           >
             21
           </button>
@@ -264,7 +266,7 @@ const Calendar = () => {
           <button
             id="22"
             className="xmas-btn"
-            onClick={() => btnClickHandler(21)}
+            onClick={() => btnClickHandler(22)}
           >
             22
           </button>
@@ -273,7 +275,7 @@ const Calendar = () => {
           <button
             id="23"
             className="xmas-btn"
-            onClick={() => btnClickHandler(22)}
+            onClick={() => btnClickHandler(23)}
           >
             23
           </button>
@@ -282,7 +284,7 @@ const Calendar = () => {
           <button
             id="24"
             className="xmas-btn"
-            onClick={() => btnClickHandler(23)}
+            onClick={() => btnClickHandler(24)}
           >
             24
           </button>
@@ -291,7 +293,7 @@ const Calendar = () => {
           <button
             id="25"
             className="xmas-day-btn"
-            onClick={() => btnClickHandler(24)}
+            onClick={() => btnClickHandler(25)}
           >
             25
           </button>

@@ -1,6 +1,6 @@
 body {
   /* background-color: #165b33; */
-  background: rgba(22, 91, 51, 0.5) url('./assets/images/lapland.jpg') no-repeat
+  background: rgba(0, 0, 0, 0.6) url('./assets/images/lapland.jpg') no-repeat
     center fixed;
   background-size: cover;
   background-blend-mode: multiply;
@@ -56,6 +56,7 @@ li:last-child {
 .xmas-btn:focus {
   outline: 0;
 }
+
 .xmas-day-btn {
   background: linear-gradient(
     338deg,
@@ -169,10 +170,12 @@ li:last-child {
     height: 6vh;
     width: 8vw;
     margin-bottom: 80%;
+    font-size: 0.7em;
   }
 
   .xmas-day-btn {
     height: 7vh;
+    font-size: 0.7em;
   }
 }
 
