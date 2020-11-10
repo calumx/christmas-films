@@ -42,8 +42,9 @@ const FilmInfo = (props) => {
           <img src={snowman} alt="A spinning snowman" />
           <img
             src={filmInfoState.pic}
-            alt={'thumbnail for '}
+            alt={'thumbnail for ' + filmInfoState.title}
             className="thumbnail-pic"
+            key={filmInfoState.title + '-img'}
           />
           <img src={xmasTree} alt="A spinning Christmas tree" />
         </div>
