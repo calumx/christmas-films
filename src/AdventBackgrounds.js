@@ -23,35 +23,44 @@ import twentytwo from './assets/images/advent-bgs/22.jpg';
 import twentythree from './assets/images/advent-bgs/23.jpg';
 import twentyfour from './assets/images/advent-bgs/24.jpg';
 
+let preloads = [
+  one,
+  two,
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine,
+  ten,
+  eleven,
+  twelve,
+  thirteen,
+  fourteen,
+  fifteen,
+  sixteen,
+  seventeen,
+  eighteen,
+  nineteen,
+  twenty,
+  twentyone,
+  twentytwo,
+  twentythree,
+  twentyfour,
+];
+
+let tempImg = [];
+
+preloads.forEach((x, i) => {
+  tempImg[i] = new Image();
+  tempImg[i].src = preloads[i];
+});
+
 let srcImgs =
   localStorage.getItem('srcImgs') !== null
     ? JSON.parse(localStorage.getItem('srcImgs'))
-    : [
-        one,
-        two,
-        three,
-        four,
-        five,
-        six,
-        seven,
-        eight,
-        nine,
-        ten,
-        eleven,
-        twelve,
-        thirteen,
-        fourteen,
-        fifteen,
-        sixteen,
-        seventeen,
-        eighteen,
-        nineteen,
-        twenty,
-        twentyone,
-        twentytwo,
-        twentythree,
-        twentyfour,
-      ]; //LARGE COLLAPSED ARRAY OF IMGS
+    : preloads; //LARGE COLLAPSED ARRAY OF IMGS
 
 let imgsInUse =
   localStorage.getItem('imgsInUse') !== null

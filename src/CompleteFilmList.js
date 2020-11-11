@@ -24,6 +24,41 @@ import maud from './assets/images/ma-nuit-chez-maud.jpg';
 import wonderful from './assets/images/its-a-wonderful-life.jpg';
 import homeAlone from './assets/images/home-alone.jpg';
 
+const preloads = [
+  dieHard,
+  jingle,
+  blkXmas,
+  eyes,
+  miracle,
+  lampoons,
+  scrooged,
+  whiteXmas,
+  tokyo,
+  nightmare,
+  klaus,
+  grinch,
+  frost,
+  clause,
+  polar,
+  noel,
+  carol,
+  apartment,
+  trading,
+  metropolitan,
+  comfort,
+  silence,
+  maud,
+  wonderful,
+  homeAlone,
+];
+
+let tempImg = [];
+
+preloads.forEach((x, i) => {
+  tempImg[i] = new Image();
+  tempImg[i].src = preloads[i];
+});
+
 const CompleteFilmList = [
   {
     title: 'Die Hard',

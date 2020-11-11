@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 const FilmInfo = (props) => {
   const [filmInfoState, setFilmInfoState] = useState(null);
+  const [imgLoaded, setImgLoaded] = useState(0);
 
   useEffect(() => {
     if (props.modalLoaded) {
@@ -18,6 +19,7 @@ const FilmInfo = (props) => {
   }, [props.modalLoaded, props.daySelected]);
 
   const exitModalClickHandler = () => {
+    setFilmInfoState(null);
     props.exitModalHandler();
   };
 
@@ -37,14 +39,16 @@ const FilmInfo = (props) => {
 
   if (props.modalLoaded && filmInfoState) {
     return (
-      <div className="info-container">
+      <div
+        className="info-container"
+        style={{ opacity: imgLoaded === 3 ? 1 : 0 }}
+      >
         <div className="top-row-images">
           <img src={snowman} alt="A spinning snowman" />
           <img
             src={filmInfoState.pic}
             alt={'thumbnail for ' + filmInfoState.title}
             className="thumbnail-pic"
-            key={filmInfoState.title + '-img'}
           />
           <img src={xmasTree} alt="A spinning Christmas tree" />
         </div>
