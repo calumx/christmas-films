@@ -1,28 +1,28 @@
-import dieHard from './assets/images/die-hard.jpg';
-import jingle from './assets/images/jingle-all-the-way.jpg';
-import blkXmas from './assets/images/black-christmas.jpg';
-import eyes from './assets/images/eyes-wide-shut.jpg';
-import miracle from './assets/images/miracle-on-34th-street.jpg';
-import lampoons from './assets/images/national-lampoons-christmas-vacation.jpg';
-import scrooged from './assets/images/scrooged.jpg';
-import whiteXmas from './assets/images/white-christmas.jpg';
-import tokyo from './assets/images/tokyo-godfathers.jpg';
-import nightmare from './assets/images/nightmare-before-christmas.jpg';
-import klaus from './assets/images/klaus.jpg';
-import grinch from './assets/images/grinch.jpg';
-import frost from './assets/images/jack-frost.jpg';
-import clause from './assets/images/the-santa-clause.jpg';
-import polar from './assets/images/the-polar-express.jpg';
-import noel from './assets/images/un-conte-de-noel.jpg';
-import carol from './assets/images/carol.jpg';
-import apartment from './assets/images/apartment.jpg';
-import trading from './assets/images/trading-places.jpg';
-import metropolitan from './assets/images/metropolitan.jpg';
-import comfort from './assets/images/comfort-and-joy.jpg';
-import silence from './assets/images/blast-of-silence.jpg';
-import maud from './assets/images/ma-nuit-chez-maud.jpg';
-import wonderful from './assets/images/its-a-wonderful-life.jpg';
-import homeAlone from './assets/images/home-alone.jpg';
+import dieHard from './assets/images/die-hard.webp';
+import jingle from './assets/images/jingle-all-the-way.webp';
+import blkXmas from './assets/images/black-christmas.webp';
+import eyes from './assets/images/eyes-wide-shut.webp';
+import miracle from './assets/images/miracle-on-34th-street.webp';
+import lampoons from './assets/images/national-lampoons-christmas-vacation.webp';
+import scrooged from './assets/images/scrooged.webp';
+import whiteXmas from './assets/images/white-christmas.webp';
+import tokyo from './assets/images/tokyo-godfathers.webp';
+import nightmare from './assets/images/nightmare-before-christmas.webp';
+import klaus from './assets/images/klaus.webp';
+import grinch from './assets/images/grinch.webp';
+import frost from './assets/images/jack-frost.webp';
+import clause from './assets/images/the-santa-clause.webp';
+import polar from './assets/images/the-polar-express.webp';
+import noel from './assets/images/un-conte-de-noel.webp';
+import carol from './assets/images/carol.webp';
+import apartment from './assets/images/apartment.webp';
+import trading from './assets/images/trading-places.webp';
+import metropolitan from './assets/images/metropolitan.webp';
+import comfort from './assets/images/comfort-and-joy.webp';
+import silence from './assets/images/blast-of-silence.webp';
+import maud from './assets/images/ma-nuit-chez-maud.webp';
+import wonderful from './assets/images/its-a-wonderful-life.webp';
+import homeAlone from './assets/images/home-alone.webp';
 
 const preloads = [
   dieHard,
@@ -54,10 +54,10 @@ const preloads = [
 
 let tempImg = [];
 
-preloads.forEach((x, i) => {
-  tempImg[i] = new Image();
-  tempImg[i].src = preloads[i];
-});
+// preloads.forEach((x, i) => {
+//   tempImg[i] = new Image();
+//   tempImg[i].src = preloads[i];
+// });
 
 const CompleteFilmList = [
   {

@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './Calendar.css';
+import './styles/Calendar.css';
 import FilmInfo from './FilmInfo';
 import AdventBackgrounds from './AdventBackgrounds';
-import './FilmInfo.css';
+import BounceLoader from 'react-spinners/BounceLoader';
 
 const Calendar = () => {
+  const [pageFullyLoaded, setPageFullyLoaded] = useState(false);
   const [modalLoaded, setModalLoaded] = useState(false);
   const [daySelected, setDaySelected] = useState(0);
+
+  const daysRef = useRef(false);
 
   const [daysOpened, setDaysOpened] = useState(
     localStorage.getItem('daysOpened') !== null
@@ -14,18 +17,21 @@ const Calendar = () => {
       : []
   );
 
-  const daysRef = useRef(null);
-
   useEffect(() => {
     const alreadySet = daysRef.current;
-
-    if (alreadySet === null) {
+    if (daysOpened.length === 0) {
+      setPageFullyLoaded(true);
+    } else if (!alreadySet) {
       daysOpened.forEach((day) => {
         document.getElementById(day).classList.add('opened');
       });
-      AdventBackgrounds();
+      AdventBackgrounds(() => {
+        setPageFullyLoaded(true);
+      });
       daysRef.current = daysOpened;
-    } else localStorage.setItem('daysOpened', daysOpened);
+    } else {
+      localStorage.setItem('daysOpened', daysOpened);
+    }
   }, [daysOpened]);
 
   const btnClickHandler = (day) => {
@@ -72,7 +78,22 @@ const Calendar = () => {
           daySelected={daySelected}
         />
       </div>
-      <ol>
+
+      <div
+        className="loading-screen"
+        style={{
+          animation: pageFullyLoaded ? 'fadeOut 1s ease forwards 1s' : '',
+        }}
+      >
+        <BounceLoader color="rgba(187, 37, 40, 1)" size="200px" />
+        Loading...
+      </div>
+
+      <ol
+        style={{
+          animation: pageFullyLoaded ? 'fadeIn 1s ease 1.5s forwards' : '',
+        }}
+      >
         <li id="btn1">
           <button
             id="1"
