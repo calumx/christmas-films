@@ -24,41 +24,6 @@ import maud from './assets/images/ma-nuit-chez-maud.webp';
 import wonderful from './assets/images/its-a-wonderful-life.webp';
 import homeAlone from './assets/images/home-alone.webp';
 
-const preloads = [
-  dieHard,
-  jingle,
-  blkXmas,
-  eyes,
-  miracle,
-  lampoons,
-  scrooged,
-  whiteXmas,
-  tokyo,
-  nightmare,
-  klaus,
-  grinch,
-  frost,
-  clause,
-  polar,
-  noel,
-  carol,
-  apartment,
-  trading,
-  metropolitan,
-  comfort,
-  silence,
-  maud,
-  wonderful,
-  homeAlone,
-];
-
-let tempImg = [];
-
-// preloads.forEach((x, i) => {
-//   tempImg[i] = new Image();
-//   tempImg[i].src = preloads[i];
-// });
-
 const CompleteFilmList = [
   {
     title: 'Die Hard',
@@ -79,8 +44,8 @@ const CompleteFilmList = [
     title: 'Black Christmas',
     pic: blkXmas,
     description:
-      'Sorority-house slasher whose menacing phone calls and wise-cracking teens predate Scream. Very vibey, still holds up, and stars a pre-Superman Margot Kidder. Subdued 70s lighting and gaudy set design set the mood perfectly, and another great entry into the pantheon of horror films which came out to pearl-clutching critical panning then slowly grew from cult following to widespread acclaim.  ',
-    pairings: 'Not sure yet',
+      'Sorority-house slasher whose menacing phone calls and wise-cracking teens predate Scream. Very vibey, still holds up, and stars a pre-Superman/Amityville Margot Kidder. Subdued 70s lighting and gaudy set design set the mood perfectly, and another great entry into the pantheon of horror films which came out to pearl-clutching critical panning then slowly grew from cult following to widespread acclaim.  ',
+    pairings: 'Weird Beard Brewing Co. Black Christmas Stout',
   },
 
   {
@@ -105,27 +70,30 @@ const CompleteFilmList = [
     description:
       "A solid entry in a series of films which hold up surprisingly well (written by...oh, that explains it), my dad's favourite and a great case for forgetting that Chevy Chase is a real-life arsehole. Easy-watching comedy of errors with no surprises, except for Johnny Galecki and Juliette Lewis playing the weans in this one.",
     pairings:
-      "A properly-cooked turkey, to make up for the one they didn't manage in the film.",
+      "A properly-cooked turkey, to make up for the one they didn't manage in the film. Can be eaten in sliced form in a sandwich.",
   },
   {
     title: 'Scrooged',
     pic: scrooged,
     description:
       'The winner of several Dickens adaptations which were considered. Any collection which includes Chevy Chase has to similarly tip the cap to the anti-Chevy. A bit tonally confused at times, which if anything just adds to the story, and nobody plays "Are we meant to cheer for this character or not?" quite like Bill Murray.',
-    pairings: 'Not sure yet.',
+    pairings:
+      "Charles Dickens' alleged favourite cocktail - the Smoking Bishop",
   },
 
   {
     title: 'White Christmas',
     pic: whiteXmas,
-    description: "An old classic I haven't actually seen, but I love the song.",
+    description:
+      "An old classic I haven't actually seen, but I love the song. According to Wikipedia, this was the first film ever to be released in VistaVision...what more is there to be said? Enormously popular and long overdue a watch.",
     pairings:
       'A traditional Christmas nog - with no alcohol - for a wholesome 50s feeling.',
   },
   {
     title: 'Tokyo Godfathers',
     pic: tokyo,
-    description: "Japanese animated one I haven't seen",
+    description:
+      "Japanese animated one I haven't seen but critically acclaimed and seemed to be a popular feature on the various lists consulted. Keen to see what a non-European, non-American take on Christmas is (in this film at least).",
     pairings: 'A sake - not very Christmassy, but VERY Japanese',
   },
 
@@ -134,22 +102,22 @@ const CompleteFilmList = [
     pic: nightmare,
     description:
       'A Tim Burton effort from around the time it was still cool to be Tim Burton, and a particularly nice vibe collision for me as I used to be really scared of it as a boy.',
-    pairings: 'Not sure yet',
+    pairings: 'A big roast pumpkin dinner - Halloween meets Christmas.',
   },
 
   {
     title: 'Klaus',
     pic: klaus,
     description:
-      "A modern Netflix thing with a killer cast. Haven't seen it yet.",
-    pairings: 'Not sure yet',
+      "A modern Netflix thing with a killer cast. Haven't seen it yet. Spanish director but English language...an 'alternative origin story' is what I've read about it so far...I think it could be a nice entry into a fairly over-stuffed canon.",
+    pairings: "A San Miguel - in honour of the film's Spanish roots.",
   },
 
   {
     title: 'How the Grinch Stole Christmas',
     pic: grinch,
     description:
-      'A classic referenced in Home Alone 2 and remade into a competent Jim Carrey romp (with which it competed for a place on this strict no-duplicates list). ',
+      "A classic referenced in Home Alone 2 and remade into a competent Jim Carrey romp (with which it competed for a place on this strict no-duplicates list). Bit of imagination required for the pairing but surely worth it. Can't rememember if Dr. Seuss is cancelled or not (I think he is) but a classic character all the same. ",
     pairings:
       'A three-decker toadstool and sauerkraut sandwich ... with arsenic sauce.',
   },
@@ -207,13 +175,16 @@ const CompleteFilmList = [
   {
     title: 'Trading Places',
     pic: trading,
-    description: 'Dan Aykroyd and Eddie Murphy',
-    pairings: 'Not sure yet.',
+    description:
+      'Dan Aykroyd and Eddie Murphy at the peak of their SNL powers meet a Jamie Lee Curtis who was still thought of almost exclusively as a "scream queen", none of whom were the studio\'s first choice for the roles but manage to generate an unforgettable chemistry throughout. (In saying that, the leads were originally meant to be Wilder and Pryor...) Dated humour in places but a quality watch overall.',
+    pairings:
+      "A rich man's drink, and a poor man's drink - a Duvel and an El Dorado",
   },
   {
     title: 'Metropolitan',
     pic: metropolitan,
-    description: '1990 socialite in Manhattan hing',
+    description:
+      "Another BFI recommendation that I haven't actually seen. Low-budget exploration of 1990s Upper East Side debutante malaise, think it's set in just one apartment...sounds promising. Get ready for a thinker.",
     pairings:
       'Some fancy, Great Gatsby-esque cocktails. Definitely a Manhattan.',
   },
@@ -221,15 +192,16 @@ const CompleteFilmList = [
   {
     title: 'Comfort and Joy',
     pic: comfort,
-    description: 'Bill Forsyth film from 1984, set in Glasgow',
-    pairings: "Irn-Bru, Bucky, some Tunnock's Snowballs.",
+    description:
+      'Bill Forsyth film from 1984, set in Glasgow, somehow managed to slip under my radar - despite a score by Mark Knopfler (of course) and turns for Clare Grogan, Rikki Fulton and Alex Norton. I feel like I can already play this film start to finish in my head, but ready for some surprises.',
+    pairings: "Irn-Bru and some Tunnock's Snowballs.",
   },
 
   {
     title: 'Blast of Silence',
     pic: silence,
     description:
-      "From the BFI's list of ten great independent Christmas films. Moody and short - sounds right up my street.",
+      "From the BFI's list of ten great independent Christmas films. Moody and short - sounds right up my street. Think this will be intense a nice break from Christmas cheer, depending on where in the calendar it gets placed. I've chosen this pairing based on my image of a private dick from other noirs...not sure how appropriate it will be!",
     pairings: 'Whisky - neat.',
   },
 
@@ -237,14 +209,14 @@ const CompleteFilmList = [
     title: 'Ma Nuit Chez Maud',
     pic: maud,
     description:
-      'One of two French entries on the list, sounds like a classic opposites-attract kind of thing, and one synopsis I read mentioned Marxism - VERY ahead of its time.',
-    pairings: 'Not sure yet. Something opposites.',
+      'One of two French entries on the list, sounds like a classic opposites-attract kind of thing, and one synopsis I read mentioned Marxism - VERY ahead of its time. Went all out with the pairing on this one. Hoping for a downer meets a thinker, meets one of those films which leaves you feeling cleverer for having watched it.',
+    pairings: 'An "Opposites Attract" Cointreau cocktail',
   },
   {
     title: "It's A Wonderful Life",
     pic: wonderful,
     description:
-      "It's in Bill's house! And Fred's house! ...what the hell are you doing with my money in your house Fred?",
+      '"It\'s in Bill\'s house! And Fred\'s house! ...what the hell are you doing with my money in your house Fred? \n" "Good morning Mr. and Mrs. Winfield! Good morning Moe\'s Tavern!" and so on...pleasant memories of Christmas Eves gone by, in addition to Simpsons episodes. A cartoonishly evil villain and a pleasingly flawed main character (for the time). An all-American classic directed by an immigrant who might have been one of the only people to ever really live the American dream. Undeniably brilliant and a perfect entry for the main course...',
     pairings: '"Mulled wine; heavy on the cinnamon, light on the cloves."',
   },
 
